@@ -1,0 +1,26 @@
+home
+schedules
+learn to skate
+hockey
+    adult league hockey
+        2019 winter league schedule
+        a league
+        b league
+        c league
+        adult league registration
+    learn to play (only a directory)
+        in house hockey ages 10 to 15
+        youth learn to play
+    coyotes hockey (leaves domain)
+    cmu (leaves domain)
+public (only a directory)
+    skate rentals
+    rules
+birthdays
+figure
+about
+    about
+    advertise
+    career
+    contact us
+drive our zamboni
