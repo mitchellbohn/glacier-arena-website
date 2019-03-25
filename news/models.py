@@ -6,7 +6,7 @@ from tinymce import models as tinymce_models
 class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    text = tinymce_models.HTMLField()
+    text = tinymce_models.HTMLField('Content')
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank = True, null = True)
 
