@@ -12,11 +12,20 @@
 
     <!-- django CMS -->
     {% render_block "css" %}
-    
+
+    {% cms_toolbar %}
+
+     <!-- django CMS toolbar adjustment -->
+   {% if user.is_authenticated %}
+   <style>
+     .navbar {
+     margin-top: 45px;
+     }
+   </style>
+   {% endif %}
 </head>
 <body>
-    <!-- django CMS Toolbar -->
-    {% cms_toolbar %}
+    
 
   <nav class="navbar navbar-expand-lg navbar-light">
     <!-- Brand -->
@@ -63,14 +72,6 @@
         </li>
       </ul>
     </div>
-    <!-- django CMS toolbar adjustment -->
-   {% if request.toolbar %}
-   <style>
-     .navbar {
-     margin-top: 45px;
-     }
-   </style>
-   {% endif %}
   </nav>
 
      <!-- Main Content -->
