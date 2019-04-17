@@ -1,5 +1,5 @@
 body{
-    background-color: #eeeeee;
+    background-color: #EEEEEE;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -12,8 +12,6 @@ a.nav-link{
   font-size: 20px;
 }
 
-a.nav-link
-
 footer{
   background-color: 	#2E4D9C;
 }
@@ -22,8 +20,8 @@ a.footer-item{
   color: white;
 }
 a.footer-item:hover{
-  background-color: #000000;
+  background-color: #6281D0;
 }
 a.nav-link:hover{
-  background-color: #c0e4f2;
+  background-color: #C0E4F2;
 }
