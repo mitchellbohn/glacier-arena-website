@@ -1,0 +1,29 @@
+body{
+    background-color: #eeeeee;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+nav{
+  background-color: 	#6DC0E1;
+}
+
+a.nav-link{
+  color: #2E4D9C;
+  font-size: 20px;
+}
+
+a.nav-link
+
+footer{
+  background-color: 	#2E4D9C;
+}
+
+a.footer-item{
+  color: white;
+}
+a.footer-item:hover{
+  background-color: #000000;
+}
+a.nav-link:hover{
+  background-color: #c0e4f2;
+}
