@@ -139,7 +139,8 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_video',
     'website',
-    'Schedules'
+    'Schedules',
+    'HockeyLeague'
 ]
 
 LANGUAGES = (
