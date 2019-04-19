@@ -70,8 +70,10 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container" style="font-family: 'Roboto', sans-serif;">
-        {% block content %} {% endblock %}
+    <div class="container" style="font-family: 'Roboto', sans-serif; background-color: #EEEEEE;">
+      <div class="row" style="padding-top: 20px;"></div>
+      {% block content %} {% endblock %}
+      <div class="row" style="padding-top: 20px;"></div>
     </div>
 
     <footer>
@@ -96,8 +98,6 @@
       </div>
       <div class="container">
 
-        <div class="row" style="padding-top: 40px;"></div>
-
         <div class="row">
           <div class="col-md-4"><a class="footer-brand" href="/"><img src="{{STATIC_URL}}img/logo-white.svg" alt="Footer Logo" style="height:80px";></a></div>
           <div class="col-md-4" style="color:white;">
@@ -114,16 +114,12 @@
           <div class="col-md-4"><a class="footer-brand" href="tel:+19702427465" style="color:white;white-space:nowrap;"><h1>(970)242-RINK</h1></a></div>
         </div>
 
-        <div class="row" style="padding-top: 30px;"></div>
-
         <div class="row">
           <div class="col-md-3"><a class="footer-brand" href="https://www.usbank.com/index.html"><img src="{{STATIC_URL}}img/us-bank-logo.png" alt="logo" style="height:60px;"></a></div>
           <div class="col-md-3"><a class="footer-brand" href="https://95rockfm.com/"><img src="{{STATIC_URL}}img/kknnfm-logo.png" alt="logo" style="height:60px;"></a></div>
           <div class="col-md-3"><a class="footer-brand" href="https://www.theteam1340.com/"><img src="{{STATIC_URL}}img/team-logo.png" alt="logo" style="height:60px;"></a></div>
           <div class="col-md-3"><a class="footer-brand" href="https://www.planethockey.com/"><img src="{{STATIC_URL}}img/planet-hockey.png" alt="logo" style="height:90px;"></a></div>
         </div>
-
-        <div class="row" style="padding-top: 30px;"></div>
 
       </div>
     </footer>
