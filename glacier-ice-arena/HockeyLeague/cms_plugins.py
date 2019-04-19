@@ -5,6 +5,6 @@ from cms.models.pluginmodel import CMSPlugin
 from . import models
 
 class LeaguePlugin(CMSPluginBase):
-    model = models.League
+    model = models.LeaguePlugin
     name = 'Hockey League Plugin'
     render_template = "league.html"
