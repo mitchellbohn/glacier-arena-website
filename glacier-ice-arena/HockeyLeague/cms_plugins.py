@@ -4,7 +4,7 @@ from cms.models.pluginmodel import CMSPlugin
 
 from . import models
 
-class HockeyLeaguePlugin(CMSPluginBase):
+class LeaguePlugin(CMSPluginBase):
     model = models.League
     name = 'Hockey League Plugin'
     render_template = "league.html"
