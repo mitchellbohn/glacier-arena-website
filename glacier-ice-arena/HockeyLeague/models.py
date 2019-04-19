@@ -13,7 +13,7 @@ class League(models.Model):
 class Team(models.Model):
     league = models.ForeignKey(League)
     name = models.CharField(blank = True, max_length=200,)
-    team_logo = models.ImageField(upload_to="/team-logos/")
+    team_logo = models.ImageField(upload_to="team-logos/")
     games_played = models.IntegerField(default=0)
     wins = models.IntegerField(default=0)
     losses = models.IntegerField(default=0)
