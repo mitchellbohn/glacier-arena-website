@@ -13,7 +13,15 @@
 
     <!-- django CMS -->
     {% render_block "css" %}
-
+    
+    <!-- django CMS toolbar adjustment -->
+   {% if user.is_authenticated %}
+   <style>
+     .navbar {
+     margin-top: 45px;
+     }
+   </style>
+   {% endif %}
   </head>
   <body>
     <div id="fb-root"></div>
