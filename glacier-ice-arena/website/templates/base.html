@@ -1,9 +1,8 @@
 {% load staticfiles i18n cms_tags sekizai_tags menu_tags %}
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Glacier Ice Arena: {% page_attribute "page_title" %}</title>
-  <link rel="icon" href="{{STATIC_URL}}img/favicon.ico">
+  <head>
+    <link rel="icon" href="{{STATIC_URL}}img/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -13,15 +12,7 @@
 
     <!-- django CMS -->
     {% render_block "css" %}
-    
-    <!-- django CMS toolbar adjustment -->
-   {% if user.is_authenticated %}
-   <style>
-     .navbar {
-     margin-top: 45px;
-     }
-   </style>
-   {% endif %}
+
   </head>
   <body>
     <div id="fb-root"></div>
