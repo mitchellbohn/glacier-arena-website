@@ -1,5 +1,5 @@
 body{
-    background-color: #EEEEEE;
+    background-color: #2E4D9C;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 25px;
 }
@@ -9,14 +9,15 @@ nav{
 }
 
 footer{
-  background-color:	#2E4D9C;
+  background-color:	#6DC0E1;
+  color: #2E4D9C;
 }
 
 a.footer-item{
-  color: white;
+  color: #2E4D9C;
 }
 a.footer-item:hover{
-  background-color: #6281D0;
+  background-color: #C0E4F2;
 }
 a.nav-link:hover{
   background-color: #C0E4F2;
