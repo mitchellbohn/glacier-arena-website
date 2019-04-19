@@ -7,7 +7,7 @@ class League(CMSPlugin):
     League_Name = models.CharField(blank=True, max_length=200,)
 
 class Team(models.Model):
-    league = models.ForeignKey(League, related_name="associated_league")
+    league = models.ForeignKey(League)
     name = models.CharField(blank = True, max_length=200,)
     team_logo = models.ImageField('Image Path')
     games_played = models.IntegerField()
@@ -21,19 +21,19 @@ class Team(models.Model):
     PTS = models.IntegerField()
 
 class Player(models.Model):
-    team = models.ForeignKey(Team, related_name="associated_team")
+    team = models.ForeignKey(Team)
     name = models.CharField(blank=True, max_length=200,)
     number = models.IntegerField()
     position = models.CharField(max_length=100,)
 
 class Games(models.Model):
-    league = models.ForeignKey(League, related_name="associated_league")
-    team1 = models.ForeignKey(Team, related_name="Team 1")
-    team2 = models.ForeignKey(Team, related_name="Team 2")
+    league = models.ForeignKey(League)
+    team1 = models.ForeignKey(Team)
+    team2 = models.ForeignKey(Team)
     game_date = models.DateField(auto_now=False,)
     was_tie = models.BooleanField(default=False)
     was_overtime = models.BooleanField(default=False)
-    team1_win = models.BooleanField(defualt=False)
+    team1_win = models.BooleanField(default=False)
     team1_goals = models.IntegerField()
-    team2_win = models.BooleanField(defualt=False)
+    team2_win = models.BooleanField(default=False)
     team2_goals = models.IntegerField()
