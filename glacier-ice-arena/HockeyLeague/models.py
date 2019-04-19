@@ -32,7 +32,7 @@ class Player(models.Model):
 
 class Games(models.Model):
     league = models.ForeignKey(League)
-    team1 = models.ForeignKey(Team)
+    team1 = models.ForeignKey(Team, related_name="team1")
     team2 = models.ForeignKey(Team)
     game_date = models.DateField(auto_now=False,)
     was_tie = models.BooleanField(default=False)
