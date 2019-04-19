@@ -1,125 +1,135 @@
 {% load staticfiles i18n cms_tags sekizai_tags menu_tags %}
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="icon" href="{{STATIC_URL}}img/favicon.ico">
+  <head>
+    <link rel="icon" href="{{STATIC_URL}}img/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <!-- django CMS -->
     {% render_block "css" %}
 
-</head>
-<body>
-  <!-- django CMS Toolbar -->
-  {% cms_toolbar %}
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 
-  <!-- django CMS toolbar adjustment -->
-  {% if request.toolbar %}
-  <style>.cms-toolbar-expanded .navbar.fixed-top {
-    margin-top: 45px;
-  }</style>
-  {% endif %}
+    <!-- django CMS Toolbar -->
+    {% cms_toolbar %}
 
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <!-- Brand -->
-    <a class="navbar-brand" href="/"><img src="{{STATIC_URL}}img/logo-white.svg" alt="logo" style="height:50px;"></a>
+    <!-- django CMS toolbar adjustment -->
+    {% if request.toolbar %}
+    <style>.cms-toolbar-expanded .navbar.fixed-top { margin-top: 45px; }</style>
+    {% endif %}
 
-    <!-- Collapsable button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <!-- Brand -->
+      <a class="navbar-brand" href="/"><img src="{{STATIC_URL}}img/logo-white.svg" alt="logo" style="height:50px;"></a>
 
-    <!--navbar links-->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/schedules" style="color:#2E4D9C">Schedules</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#2E4D9C">Public</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="/public/rentals" style="color:#2E4D9C">Rentals</a>
-            <a class="dropdown-item" href="/public/rules" style="color:#2E4D9C">Rules</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/learn-to-skate" style="color:#2E4D9C">Learn to skate</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#2E4D9C">Hockey</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="/hockey/adult-league" style="color:#2E4D9C">Adult League Hockey</a>
-            <a class="dropdown-item" href="/hockey/learn-to-play" style="color:#2E4D9C">Learn To Play</a>
-            <a class="dropdown-item" href="https://www.grandjunctionhockey.com/" style="color:#2E4D9C">Coyotes Hockey</a>
-            <a class="dropdown-item" href="https://cmumavericks.com/schedule.aspx?path=mhky" style="color:#2E4D9C">CMU Hockey</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/figure" style="color:#2E4D9C">Figure</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/birthdays" style="color:#2E4D9C">Birthdays</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about" style="color:#2E4D9C">About</a>
-        </li>
-      </ul>
+      <!-- Collapsable button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!--navbar links-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/schedules" style="color:#2E4D9C">Schedules</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/public" style="color:#2E4D9C">Public Skate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/learn-to-skate" style="color:#2E4D9C">Learn To Skate</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#2E4D9C">Hockey</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/hockey/adult-league" style="color:#2E4D9C">Adult League Hockey</a>
+              <a class="dropdown-item" href="/hockey/learn-to-play" style="color:#2E4D9C">Learn To Play</a>
+              <a class="dropdown-item" href="https://www.grandjunctionhockey.com/" style="color:#2E4D9C">Coyotes Hockey</a>
+              <a class="dropdown-item" href="https://cmumavericks.com/schedule.aspx?path=mhky" style="color:#2E4D9C">CMU Hockey</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/figure" style="color:#2E4D9C">Figure</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/birthdays" style="color:#2E4D9C">Birthdays</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about" style="color:#2E4D9C">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container" style="font-family: 'Roboto', sans-serif;">
+        {% block content %} {% endblock %}
     </div>
-  </nav>
 
-     <!-- Main Content -->
-     <div class="container">
+    <footer>
+      <div class="container">
+        <div class="row" style="padding-top: 20px;"></div>
+        <div class="row">
+          <div class="col-md-12">
+
             <div class="row">
-              <div class="col-lg-8 col-md-10 mx-auto">
-                  {% block content %} {% endblock %}
-              </div>
+              <div class="col-md-4"><a class="footer-item" href="/help">Help</a></div>
+              <div class="col-md-4"><a class="footer-item" href="/about">About us</a></div>
+              <div class="col-md-4"><a class="footer-item" href="/contact-us">Contact us</a></div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4"><a class="footer-item" href="/careers">Careers</a></div>
+              <div class="col-md-4"><a class="footer-item" href="/advertising">Advertising</a></div>
+              <div class="col-md-4"></div>
             </div>
           </div>
-
-  <footer>
-  <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-
-          <div class="row">
-            <div class="col-md-4"><a class="footer-item" href="/help">Help</a></div>
-            <div class="col-md-4"><a class="footer-item" href="/about">About us</a></div>
-            <div class="col-md-4"><a class="footer-item" href="/contact-us">Contact us</a></div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-4"><a class="footer-item" href="/careers">Careers</div>
-            <div class="col-md-4"><a class="footer-item" href="/advertising">Advertising</div>
-            <div class="col-md-4"><a class="footer-item" href="/zamboni">Drive our zamboni</div>
-          </div>
-
         </div>
       </div>
-    </div>
-    <div class="container">
-          <div class="row" style="padding-top: 30px;"></div>
+      <div class="container">
 
-          <div class="row">
-            <div class="col-md-3"><a class="footer-brand" href="https://www.usbank.com/index.html"><img src="{{STATIC_URL}}img/us-bank-logo.png" alt="logo" style="height:60px;"></a></div>
-            <div class="col-md-3"><a class="footer-brand" href="https://95rockfm.com/"><img src="{{STATIC_URL}}img/kknnfm-logo.png" alt="logo" style="height:60px;"></a></div>
-            <div class="col-md-3"><a class="footer-brand" href="https://www.theteam1340.com/"><img src="{{STATIC_URL}}img/team-logo.png" alt="logo" style="height:60px;"></a></div>
-            <div class="col-md-3"><a class="footer-brand" href="https://www.planethockey.com/"><img src="{{STATIC_URL}}img/planet-hockey.png" alt="logo" style="height:90px;"></a></div>
+        <div class="row" style="padding-top: 40px;"></div>
+
+        <div class="row">
+          <div class="col-md-4"><a class="footer-brand" href="/"><img src="{{STATIC_URL}}img/logo-white.svg" alt="Footer Logo" style="height:80px";></a></div>
+          <div class="col-md-4" style="color:white;">
+            <address class="vcard">
+              <span class="adr" style="font-size:20px">
+                <span class="street-address">2515 Riverside Pkwy</span>
+                <span class="locality">Grand Junction</span>
+                <abbr class="region" title="Colorado">CO</abbr>&nbsp;&nbsp;
+                <span class="postal-code">81501</span>
+                <span class="country-name">USA</span>
+              </span>
+            </address>
           </div>
-          <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"><a class="footer-brand" href="/"><img src="{{STATIC_URL}}img/logo-white.svg" alt="Footer Logo" style="height:80px;></a></div>
-            <div class="col-md-4"></div>
-          </div>
+          <div class="col-md-4"><a class="footer-brand" href="tel:+19702427465" style="color:white;white-space:nowrap;"><h1>(970)242-RINK</h1></a></div>
         </div>
-    </div>
-  </div>
-</footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
+
+        <div class="row" style="padding-top: 30px;"></div>
+
+        <div class="row">
+          <div class="col-md-3"><a class="footer-brand" href="https://www.usbank.com/index.html"><img src="{{STATIC_URL}}img/us-bank-logo.png" alt="logo" style="height:60px;"></a></div>
+          <div class="col-md-3"><a class="footer-brand" href="https://95rockfm.com/"><img src="{{STATIC_URL}}img/kknnfm-logo.png" alt="logo" style="height:60px;"></a></div>
+          <div class="col-md-3"><a class="footer-brand" href="https://www.theteam1340.com/"><img src="{{STATIC_URL}}img/team-logo.png" alt="logo" style="height:60px;"></a></div>
+          <div class="col-md-3"><a class="footer-brand" href="https://www.planethockey.com/"><img src="{{STATIC_URL}}img/planet-hockey.png" alt="logo" style="height:90px;"></a></div>
+        </div>
+
+        <div class="row" style="padding-top: 30px;"></div>
+
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
 </html>
