@@ -7,6 +7,7 @@ Follow the instructions found at https://docs.djangoproject.com/en/2.1/intro/ins
 
 
 ## How to install
+:
 >you will need python3 for this setup
 >update pip
 >python3 -m pip install --user --upgrade pip
