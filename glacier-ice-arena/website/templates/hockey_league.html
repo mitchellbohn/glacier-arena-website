@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div id="adultHockey" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active" style="height:400px;">
+                    <h1>{{ instance.league_name }}</h1>
+                    <table class="table">
+                        {% for team in instance.League %}
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Team</th>
+                                <th scope="col">GP</th>
+                                <th scope="col">W</th>
+                                <th scope="col">L</th>
+                                <th scope="col">T</th>
+                                <th scope="col">Pts</th>
+                                <th scope="col">GF</th>
+                                <th scope="col">GA</th>
+                                <th scope="col">GD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">team.name</th>
+                                <td>9</td>
+                                <td>7</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>15</td>
+                                <td>73</td>
+                                <td>49</td>
+                                <td>+24</td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+                
+            </div>
+            <a class="carousel-control-prev" style="margin-left:-150px;" href="#adultHockey" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" style="margin-right:-150px;" href="#adultHockey" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div class="row" style="padding-top:30px;padding-left:20px;padding-right:20px;">
+        <h1>Hockey is for everyone!</h1>
+        <p>Ice Hockey is a fun and healthy way to get in shape and meet new people. Young or Old, we have something for you. Our in-house hockey programs are designed to get you going with the basics so you are ready to start playing for real.</p>
+        <p>For those who are just getting started you can look at one of our beginner programs</p>
+        <ul>
+	        <li><strong><a href="http://www.glaciericearena.net/blog/2016/10/03/mite-hockey/">9 &amp; Under</a></strong></li>
+	        <li><a href="http://www.glaciericearena.net/blog/2016/10/08/house-hockey-ages-10-14/"><strong>10-14</strong></a></li>
+	        <li><a href="http://www.glaciericearena.net/blog/2016/10/08/15-house-hockey/"><strong>15 &amp; Up</strong></a></li>
+        </ul>
+        <p>For those with some experience who are looking to play Ice Hockey, then you should look here:</p>
+        <ul>
+	        <li><a href="http://www.glaciericearena.net/adult-hockey/" rel="noopener" target="_blank"><strong>Adult League</strong></a></li>
+	        <li><a href="http://www.grandjunctionhockey.com/" rel="noopener" target="_blank"><strong>Grand Junction Coyotes Youth Hockey</strong></a></li>
+        </ul>
+        <p>If you're looking for information on CMUs Ice Hockey team, then you should look here:</p>
+        <ul>
+	        <li><a href="https://cmumavericks.com/index.aspx?path=mhky"><strong>CMU Men's Ice Hockey</strong></a></li>
+        </ul>
+    </div>
+</div>

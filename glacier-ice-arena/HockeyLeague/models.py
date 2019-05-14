@@ -1,6 +1,8 @@
 from django.db import models
 from cms.models import CMSPlugin
 from django.contrib.auth.models import User
+from django.contrib.contenttypes.models import ContentType
+from django.core.urlresolvers import reverse
 
 # Create your models here.
 
@@ -29,6 +31,10 @@ class Team(models.Model):
     def __str__(self):
         return self.name
 
+    def get_admin_url(self):
+        content_type = ContentType.objects.get_for_model(self.__class__)
+        return reverse("admin:%s_%s_change" % (content_type.app_label, content_type.model), args=(self.pk))
+
 class Player(models.Model):
     user = models.ForeignKey(User)
     team = models.ForeignKey(Team)
@@ -36,7 +42,7 @@ class Player(models.Model):
     number = models.IntegerField(null=True, blank=True,)
     position = models.CharField(null=True, blank=True, max_length=100,)
 
-class Games(models.Model):
+class Game(models.Model):
     league = models.ForeignKey(League)
     team1 = models.ForeignKey(Team, related_name="home")
     team2 = models.ForeignKey(Team, related_name="guest")

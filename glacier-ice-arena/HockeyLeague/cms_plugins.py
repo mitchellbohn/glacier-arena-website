@@ -7,4 +7,10 @@ from . import models
 class LeaguePlugin(CMSPluginBase):
     model = models.LeaguePlugin
     name = 'Hockey League Plugin'
-    render_template = "league.html"
+    render_template = "hockey_league.html"
+
+    def render(self, context, instance, placeholder):
+        context = super(LeaguePlugin, self).render(context, instance, placeholder)
+        return context
+
+plugin_pool.register_plugin(LeaguePlugin)
